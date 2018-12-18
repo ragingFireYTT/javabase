@@ -12,13 +12,13 @@ public class MyMain {
     public static void main(String[] args) throws InterruptedException {
         long startA = System.currentTimeMillis();
         List<Integer> list = new PrimeNumberClient().start();
-        long endA= System.currentTimeMillis();
-        System.out.println("多线程执行时间："+(endA -startA)+"毫秒");
-        list.sort(new Comparator() {
-            public int compare(Object o1, Object o2) {
-                if ((int) o1 > (int) o2) {
+        long endA = System.currentTimeMillis();
+        System.out.println("多线程执行时间：" + (endA - startA) + "毫秒");
+        list.sort(new Comparator<Integer>() {
+            public int compare(Integer o1, Integer o2) {
+                if (o1 > o2) {
                     return 1;
-                } else if ((int) o2 > (int) o1) {
+                } else if (o2 > o1) {
                     return -1;
                 } else {
                     return 0;
@@ -27,19 +27,18 @@ public class MyMain {
         });
 
 
-
         // 单线程运行
         List<Integer> primes = new ArrayList<Integer>();
         long startB = System.currentTimeMillis();
         getPrimeNumber(1, 400000, primes);
-        long endB= System.currentTimeMillis();
-        System.out.println("单线程执行时间："+(endB-startB)+"毫秒");
-        System.out.println("-----------"+list.size()+"------"+primes.size());
-        primes.sort(new Comparator() {
-            public int compare(Object o1, Object o2) {
-                if ((int) o1 > (int) o2) {
+        long endB = System.currentTimeMillis();
+        System.out.println("单线程执行时间：" + (endB - startB) + "毫秒");
+        System.out.println("-----------" + list.size() + "------" + primes.size());
+        primes.sort(new Comparator<Integer>() {
+            public int compare(Integer o1, Integer o2) {
+                if (o1 > o2) {
                     return 1;
-                } else if ((int) o2 > (int) o1) {
+                } else if (o2 > o1) {
                     return -1;
                 } else {
                     return 0;
@@ -51,9 +50,9 @@ public class MyMain {
         // 校验单线程和多线程的结果是否相同
         for (int i = 0; i < list.size(); i++) {
             if (primes.get(0).equals(list.get(0))) {
-                System.out.println("相等:"+i);
-            }else {
-                System.out.print("list.get("+i+") = " + list.get(i));
+                System.out.println("相等:" + i);
+            } else {
+                System.out.print("list.get(" + i + ") = " + list.get(i));
                 System.out.println("primes.get(i) = " + primes.get(i));
             }
         }
@@ -61,6 +60,13 @@ public class MyMain {
     }
 
 
+    /**
+     * 单线程执行，获得素数
+     * @param start
+     * @param end
+     * @param primes
+     * @return
+     */
     public static List getPrimeNumber(int start, int end, List primes) {
 
         for (int a = start; a < end; a++) {

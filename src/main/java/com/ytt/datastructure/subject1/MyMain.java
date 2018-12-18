@@ -1,4 +1,4 @@
-package com.ytt.thread.subject4;
+package com.ytt.datastructure.subject1;
 
 import java.util.Random;
 import java.util.Stack;

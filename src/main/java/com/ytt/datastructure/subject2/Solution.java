@@ -1,4 +1,4 @@
-package com.ytt.thread.subject3;
+package com.ytt.datastructure.subject2;
 
 /**
  * Created by ytt on 2018/12/17.
@@ -29,7 +29,7 @@ public class Solution {
     }
 
     public static ArrayList<Integer> printListFromTailToHead(ListNode listNode) {
-        Stack<Integer> stack = new Stack<>();
+        Stack<Integer> stack = new Stack<Integer>();
         //last in first out
         //stack.pop()--返回最顶数据，并移除。
         //stack.peek()--返回最顶数据，不移除
@@ -40,7 +40,7 @@ public class Solution {
         }
 
         //
-        ArrayList<Integer> arrayList = new ArrayList<>();
+        ArrayList<Integer> arrayList = new ArrayList<Integer>();
         while (stack.empty() == false) {
             arrayList.add(stack.pop());
         }
@@ -50,7 +50,6 @@ public class Solution {
     private static class ListNode {
         int val;
         ListNode next = null;
-
         ListNode(int val) {
             this.val = val;
         }

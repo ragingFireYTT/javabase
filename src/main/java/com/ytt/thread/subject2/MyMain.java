@@ -6,15 +6,13 @@ package com.ytt.thread.subject2;
 public class MyMain {
     public static void main(String[] args) throws InterruptedException {
         //region 测试普通方法
-        MyObject myObject =new MyObject();
+        final MyObject  myObject =new MyObject();
         new Thread(new Runnable() {
-            @Override
             public void run() {
                 myObject.printNum();
             }
         }).start();
         Thread threadA= new Thread(new Runnable() {
-            @Override
             public void run() {
                 myObject.printA();
             }
@@ -28,13 +26,11 @@ public class MyMain {
 
         //region 测试静态方法
         new Thread(new Runnable() {
-            @Override
             public void run() {
                 MyObject.printNumStatic();
             }
         }).start();
         new Thread(new Runnable() {
-            @Override
             public void run() {
                 MyObject.printAStatic();
             }
