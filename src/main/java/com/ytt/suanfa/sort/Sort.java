@@ -50,51 +50,52 @@ public class Sort {
     //endregion
 
     //region 快速排序
-    // 比基准小 < 基准 < 比基准大 ----- 找到一对交换 ----- 相遇
+    //小<= 基准 <= 大。 找到需要交换的一对 。 递归 (qian < hou)。
     //冒泡 a[0]=1   a[1]=4   a[2]=4   a[3]=4   a[4]=5   a[5]=5   a[6]=5   a[7]=5   a[8]=8   a[9]=9   a[10]=11   a[11]=12   a[12]=12   a[13]=17   a[14]=22   a[15]=23   a[16]=25   a[17]=34   a[18]=44   a[19]=51   a[20]=78
     //快速 a[0]=1   a[1]=4   a[2]=4   a[3]=4   a[4]=5   a[5]=5   a[6]=5   a[7]=5   a[8]=8   a[9]=9   a[10]=11   a[11]=12   a[12]=12   a[13]=17   a[14]=22   a[15]=23   a[16]=25   a[17]=34   a[18]=44   a[19]=51   a[20]=78
-    //快速 a[0]=1   a[1]=4   a[2]=4   a[3]=4   a[4]=5   a[5]=5   a[6]=5   a[7]=5   a[8]=8   a[9]=9   a[10]=11   a[11]=12   a[12]=12   a[13]=17   a[14]=22   a[15]=23   a[16]=25   a[17]=34   a[18]=44   a[19]=51   a[20]=78
+
     @Test
     public void testQuickSort() {
         quickSort(0, arr.length - 1);
         System.out.println("最终结果==========");
         Tool.printA(arr);
     }
+
     public void quickSort(int start, int end) {
 
-            int jizhun = arr[start]; // 基准数
-            int qian = start;
-            int hou = end;
+        int jizhun = arr[start]; // 基准数
+        int qian = start;
+        int hou = end;
 
-            while (qian < hou) {
-                while (arr[hou] >= jizhun && qian < hou) {
-                    hou = hou - 1;
-                    System.out.println("从后找" + hou);
-                }
-                arr[qian] = arr[hou];
-                System.out.println("前" + qian + "------后" + hou);
-                Tool.printA(arr);
-
-                while (arr[qian] <= jizhun && qian < hou) {
-                    qian = qian + 1;
-                    System.out.println("从前找" + qian);
-                }
-                arr[hou] = arr[qian];
-                System.out.println("前" + qian + "------后" + hou);
-                Tool.printA(arr);
-                System.out.println("--------------一波结束---------------------");
+        while (qian < hou) {
+            while (arr[hou] >= jizhun && qian < hou) {
+                hou = hou - 1;
+                System.out.println("从后找" + hou);
             }
-            //System.out.println("--------------------------------------------------------------------------一波迭代结束------------------------------------------------------------");
-            arr[qian] = jizhun;
-            // 此时 qian = hou
+            arr[qian] = arr[hou];
+            System.out.println("前" + qian + "------后" + hou);
+            Tool.printA(arr);
 
-        // 此时 qian = hou
-        if (start<qian){
-            quickSort(start,qian); // 小 分区迭代
+            while (arr[qian] <= jizhun && qian < hou) {
+                qian = qian + 1;
+                System.out.println("从前找" + qian);
+            }
+            arr[hou] = arr[qian];
+            System.out.println("前" + qian + "------后" + hou);
+            Tool.printA(arr);
+            System.out.println("--------------一波结束---------------------");
         }
-        if (qian < end){
-            quickSort(qian+1,end); // 大分区迭代
+        //System.out.println("--------------------------------------------------------------------------一波迭代结束------------------------------------------------------------");
+        // 此时 qian = hou
+        arr[qian] = jizhun;
+
+        if (start < qian) {
+            quickSort(start, qian); // 小 分区迭代
+        }
+        if (qian < end) {
+            quickSort(qian + 1, end); // 大分区迭代
         }
     }
     //endregion
+
 }
