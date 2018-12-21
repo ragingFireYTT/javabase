@@ -100,7 +100,7 @@ public class Solution {
         // 打印树
         // https://blog.csdn.net/zhang___yong/article/details/78932459
         public void print(){
-            LinkedList<TreeNode> queue=new LinkedList<>();
+            LinkedList<TreeNode> queue=new LinkedList<TreeNode>();
             queue.add(this);
             TreeNode last=this;
             while(!queue.isEmpty()){

@@ -1,0 +1,17 @@
+package com.ytt.designpattern.waiguanmoshi;
+
+import org.apache.log4j.Logger;
+
+/**
+ * Created by ytt on 2018/12/21.
+ */
+public class Cilent {
+    public static final Logger LOGGER = Logger.getLogger(Cilent.class);
+
+    public static void main(String[] args) {
+        Computer computer = new Computer();
+        computer.start();
+        LOGGER.info("=================");
+        computer.shutDown();
+    }
+}
