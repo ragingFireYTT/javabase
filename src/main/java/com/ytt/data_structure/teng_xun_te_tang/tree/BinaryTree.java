@@ -50,15 +50,19 @@ public class BinaryTree {
             } else {
                 linkedList.add(current.getRightTreeNode());
             }
-
             if (current == last) {
-                if(!linkedList.isEmpty()){
+                if (!linkedList.isEmpty()) {
                     last = linkedList.getLast();
                 }
                 System.out.println(Arrays.toString(arr.toArray()));
                 arr = new ArrayList();
             }
         }
+    }
+
+    // 前序遍历
+    public TreeNode searchQian(int value) {
+        return root.searchQian(value);
     }
 
 }

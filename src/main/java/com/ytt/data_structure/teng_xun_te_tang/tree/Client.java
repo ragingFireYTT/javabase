@@ -19,7 +19,6 @@ public class Client {
                 .setLeftTreeNode(new TreeNode(10)).setRightTreeNode(new TreeNode(11)));
 
 
-
         TreeNode rootR = new TreeNode(3);
         root.setRightTreeNode(rootR);
         rootR.setLeftTreeNode(new TreeNode(6)
@@ -28,13 +27,16 @@ public class Client {
                 .setLeftTreeNode(new TreeNode(14)).setRightTreeNode(new TreeNode(15)));
 
 
-
         binaryTree.formShow();
         System.out.println("===========");
         binaryTree.midShow(); // 8 4 9 2 10 5 11 1    12 6 13    3 14 7 15
 
         System.out.println("++++++++++++");
         binaryTree.print();
+
+        System.out.println("++++++++++++");
+        TreeNode treeNode = binaryTree.searchQian(10);
+        System.out.println(treeNode != null ? treeNode.value : treeNode);
     }
 }
 

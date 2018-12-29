@@ -52,4 +52,30 @@ public class TreeNode {
             rightTreeNode.midShow();
         }
     }
+
+    //前序搜索
+    public TreeNode searchQian(int value) {
+        TreeNode result = null;
+        if (this.value == value) {
+            return this;
+        } else {
+            //查询左节点
+            if (this.getLeftTreeNode() != null) {
+                result = this.getLeftTreeNode().searchQian(value);
+            }
+
+            if (result != null) {
+                return result;
+            }
+
+            // 查询右节点
+            if (this.getRightTreeNode() != null) {
+                result = this.getRightTreeNode().searchQian(value);
+                return result;
+            }
+        }
+        return null;
+    }
+
+
 }
