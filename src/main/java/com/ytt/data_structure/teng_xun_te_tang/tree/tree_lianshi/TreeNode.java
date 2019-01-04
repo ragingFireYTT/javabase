@@ -1,4 +1,4 @@
-package com.ytt.data_structure.teng_xun_te_tang.tree;
+package com.ytt.data_structure.teng_xun_te_tang.tree.tree_lianshi;
 
 /**
  * Created by ytt on 2018/12/27.
@@ -78,4 +78,35 @@ public class TreeNode {
     }
 
 
+    // 删除子树
+    public boolean deleteTreeNode(int value) {
+
+        if (this.leftTreeNode != null) {
+            if (this.leftTreeNode.value == value) {
+                this.leftTreeNode = null;
+                return true;
+            }
+
+        }
+
+        if (this.rightTreeNode != null) {
+
+            if (this.rightTreeNode.value == value) {
+                this.rightTreeNode = null;
+                return true;
+            }
+        }
+
+
+        if (this.leftTreeNode != null) {
+            if (this.leftTreeNode.deleteTreeNode(value)) {
+                return true;
+            }else {
+                if (this.rightTreeNode != null) {
+                    return this.rightTreeNode.deleteTreeNode(value);
+                }
+            }
+        }
+        return false;
+    }
 }

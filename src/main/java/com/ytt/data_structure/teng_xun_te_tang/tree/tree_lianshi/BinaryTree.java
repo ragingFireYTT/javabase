@@ -1,6 +1,4 @@
-package com.ytt.data_structure.teng_xun_te_tang.tree;
-
-import com.ytt.data_structure.subject3.Solution;
+package com.ytt.data_structure.teng_xun_te_tang.tree.tree_lianshi;
 
 import java.util.*;
 
@@ -63,6 +61,14 @@ public class BinaryTree {
     // 前序遍历
     public TreeNode searchQian(int value) {
         return root.searchQian(value);
+    }
+
+    public boolean deleteTreeNode(int value) {
+        if (root.value == value) {
+            root = null;
+            return true;
+        }
+        return root.deleteTreeNode(value);
     }
 
 }

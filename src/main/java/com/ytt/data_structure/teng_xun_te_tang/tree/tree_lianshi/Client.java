@@ -1,4 +1,4 @@
-package com.ytt.data_structure.teng_xun_te_tang.tree;
+package com.ytt.data_structure.teng_xun_te_tang.tree.tree_lianshi;
 
 /**
  * Created by ytt on 2018/12/27.
@@ -37,6 +37,12 @@ public class Client {
         System.out.println("++++++++++++");
         TreeNode treeNode = binaryTree.searchQian(10);
         System.out.println(treeNode != null ? treeNode.value : treeNode);
+
+        System.out.println("++++++++++++");
+        System.out.println(binaryTree.deleteTreeNode(3));
+        if (binaryTree != null) {
+            binaryTree.print();
+        }
     }
 }
 
