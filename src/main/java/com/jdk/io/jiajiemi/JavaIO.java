@@ -1,4 +1,4 @@
-package com.ytt.jiajiemi;
+package com.jdk.io.jiajiemi;
 
 import java.io.File;
 import java.io.FileInputStream;
@@ -19,7 +19,7 @@ public class JavaIO {
     }
     /**
      * 查找文件
-     * @param 查找目录
+     * @param s 查找目录
      */
     public void findFiles(String s){
         File file = new File(s);
@@ -36,7 +36,7 @@ public class JavaIO {
     }
     /**
      * 读取文件
-     * @param s文件名（带绝对路径）
+     * @param s 文件名（带绝对路径）
      */
     public void readFile(String s){
         try {
@@ -53,9 +53,9 @@ public class JavaIO {
     }
     /**
      * 写文件的方法
-     * @param msg写入的内容
-     * @param s文件绝对路径
-     * @throws Exception抛出异常
+     * @param msg 写入的内容
+     * @param s 文件绝对路径
+     * @throws Exception 抛出异常
      */
     public void writeFile(String msg,String s) throws Exception{
         try {
@@ -69,7 +69,7 @@ public class JavaIO {
     }
     /**
      * 复制文件
-     * @param from原文件（带绝对路径）
+     * @param from 原文件（带绝对路径）
      * @param to 复制后文件（带绝对路径）
      * @throws Exception
      */
@@ -88,9 +88,9 @@ public class JavaIO {
     }
     /**
      * 文件加密传输的方法
-     * @param from原文件（带绝对路径）
-     * @param to复制后文件（带绝对路径）
-     * @throws Exception抛出异常
+     * @param from 原文件（带绝对路径）
+     * @param to 复 制后文件（带绝对路径）
+     * @throws Exception 抛出异常
      */
     public void JiaMi(String from,String to,int day,int height) throws Exception{
         FileInputStream  fis = new FileInputStream(from);
@@ -111,9 +111,9 @@ public class JavaIO {
     }
     /**
      * 文件解密接收的方法
-     * @param from原文件（带绝对路径）
-     * @param to复制后文件（带绝对路径）
-     * @throws Exception抛出异常
+     * @param from 原文件（带绝对路径）
+     * @param to 复制后文件（带绝对路径）
+     * @throws Exception 抛出异常
      */
     public void JieMi(String from,String to,int day,int height) throws Exception{
         FileInputStream  fis = new FileInputStream(from);

@@ -1,4 +1,4 @@
-package com.ytt.jiajiemi;
+package com.jdk.io.jiajiemi;
 
 
 import java.awt.event.ActionEvent;
@@ -10,13 +10,13 @@ import javax.swing.JTextArea;
 public class MainIOListener implements ActionListener {
 
     private JTextArea jp1, jp2, jp3, jtfore, jtafter, jtjiami, jtjiaafter, jtjiemi, jtjieafter;
-    private int jtdayjia, jtheightjia, jtdayjie, jtheightjie;
+    private JTextArea jtdayjia, jtheightjia, jtdayjie, jtheightjie;
     private JLabel now;
 
-    public MainIOListener(JTextArea jp1, JTextArea jp2, JTextArea jp3,
-                          JTextArea jtfore, JTextArea jtafter, JTextArea jtjiami,
-                          JTextArea jtjiaafter, JTextArea jtjiemi, JTextArea jtjieafter, JTextArea jtdayjia,
-                          JTextArea jtheightjia, JTextArea jtdayjie, JTextArea jtheightjie, JLabel now) {
+    public MainIOListener(
+            JTextArea jtjiami,
+            JTextArea jtjiaafter, JTextArea jtjiemi, JTextArea jtjieafter, JTextArea jtdayjia,
+            JTextArea jtheightjia, JTextArea jtdayjie, JTextArea jtheightjie, JLabel now) {
         this.jp1 = jp1;
         this.jp2 = jp2;
         this.jp3 = jp3;
@@ -27,10 +27,10 @@ public class MainIOListener implements ActionListener {
         this.jtjiemi = jtjiemi;
         this.jtjieafter = jtjieafter;
         //String装换为int
-        this.jtdayjia = Integer.parseInt(jtdayjia.getText());
-        this.jtdayjie = Integer.parseInt(jtdayjie.getText());
-        this.jtheightjia = Integer.parseInt(jtheightjia.getText());
-        this.jtheightjie = Integer.parseInt(jtheightjie.getText());
+        this.jtdayjia = jtdayjia;
+        this.jtdayjie = jtdayjie;
+        this.jtheightjia = jtheightjia;
+        this.jtheightjie = jtheightjie;
 
         this.now = now;
     }
@@ -61,7 +61,7 @@ public class MainIOListener implements ActionListener {
         } else if (e.getActionCommand().equals("  文  件            加  密  ")) {
             JavaIO jio = new JavaIO();
             try {
-                jio.JiaMi(jtjiami.getText(), jtjiaafter.getText(), jtdayjia, jtheightjia);
+                jio.JiaMi(jtjiami.getText(), jtjiaafter.getText(), Integer.parseInt(jtdayjia.getText()), Integer.parseInt(jtheightjia.getText()) );
                 now.setText("文件已加密");
             } catch (Exception e1) {
                 e1.printStackTrace();
@@ -69,7 +69,7 @@ public class MainIOListener implements ActionListener {
         } else if (e.getActionCommand().equals("  文  件            解  密  ")) {
             JavaIO jio = new JavaIO();
             try {
-                jio.JieMi(jtjiemi.getText(), jtjieafter.getText(), jtdayjie, jtheightjie);
+                jio.JieMi(jtjiemi.getText(), jtjieafter.getText(),Integer.parseInt(jtdayjie.getText()), Integer.parseInt(jtheightjie.getText()));
                 now.setText("文件已解密");
             } catch (Exception e1) {
                 e1.printStackTrace();
