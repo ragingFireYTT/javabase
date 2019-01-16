@@ -11,13 +11,19 @@ public class text {
     public static void main(String[] args) throws IOException {
 
         FileOutputStream fos = new FileOutputStream("E://2.txt",false);
-        fos.write(1000); // 取低八位存储
+        fos.write(240+20); // 取低八位存储
+        //fos.flush();
         //fos.write("sssddf".getBytes());
         fos.flush();
         fos.close();
         FileInputStream fis = new FileInputStream("E://2.txt");
 
         int length= fis.read();
-        System.out.println("-------------"+length);
+
+        byte[] b= new byte[6];
+        fis.read(b);
+
+        System.out.println("-------------");
+
     }
 }

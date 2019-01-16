@@ -99,6 +99,7 @@ public class JavaIO {
         int count=0;
         //循环写入
         while(n!=-1){//加密算法，可行定义，与解密算法相逆
+
             if(day%height*n != 1){
                 fos.write(n+height);
             }else{
