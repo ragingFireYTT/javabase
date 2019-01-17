@@ -1,4 +1,4 @@
-package com.jdk.util.queue;
+package com.ytt.jdk.util.queue;
 
 import org.junit.Test;
 

@@ -1,5 +1,7 @@
 package com.ytt;
 
+import org.junit.Test;
+
 import java.io.File;
 import java.util.Stack;
 import java.util.concurrent.ExecutorService;
@@ -25,6 +27,13 @@ public class temp {
                 file1.renameTo(new File(path+"\\"+replace));
             }
         }
+
+    }
+    @Test
+    public void test(){
+        String s = "1";
+        String s2 = "2";
+        s.compareTo(s2);
 
     }
 }

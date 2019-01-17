@@ -1,4 +1,4 @@
-package com.jdk.enumm;
+package com.ytt.jdk.enumm;
 
 /**
  * Created by ytt on 2019/1/15.
